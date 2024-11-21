@@ -1,0 +1,1 @@
+start cmd /c DISM /Online /Cleanup-Image /CheckHealth > "%~dp0Results\DISM_CheckHealth_Result.txt"
