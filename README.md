@@ -1,0 +1,1 @@
+Preventive Maintenance Toolkit for Desktop and Laptop is a VB-developed application designed to support IT staff and designated personnel in performing annual preventive maintenance on ICT equipment. This toolkit comprises seven distinct tools, each aimed at streamlining and accelerating the preventive maintenance process for ICT devices.
