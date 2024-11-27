@@ -281,7 +281,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnPing_Click(sender As Object, e As EventArgs) Handles BtnPing.Click
-        Dim address As String = txtAddress.Text.Trim()
+        Dim address As String = IpBox.Text.Trim()
 
         ' If no address is entered, ping Google.com
         If String.IsNullOrEmpty(address) Then
@@ -309,16 +309,109 @@ Public Class Form1
             MessageBox.Show("Please enter an address to ping.")
         End If
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Process.Start("DISMCheckhealth.bat")
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+    Private Sub DocumentationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentationToolStripMenuItem.Click
+        Dim pdfPath As String = Path.Combine(Application.StartupPath, "Resources", "PMT.pdf")
+        Dim edgePath As String = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
+        ' Check if the PDF file exists
+        If Not File.Exists(pdfPath) Then
+            MessageBox.Show("The documentation file could not be found.", "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Check if Edge is installed
+        If Not File.Exists(edgePath) Then
+            MessageBox.Show("Microsoft Edge is not installed at the expected location.", "Edge Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Start the process to open the PDF
+        Process.Start(New ProcessStartInfo(edgePath, pdfPath) With {.UseShellExecute = True})
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub MASActivationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MASActivationToolStripMenuItem.Click
+        ' Show confirmation dialog
+        Dim result As DialogResult = MessageBox.Show("Do you want to run the activation script from the URL?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        ' If the user clicks Yes, run the PowerShell command
+        If result = DialogResult.Yes Then
+            Try
+                Dim psi As New ProcessStartInfo()
+                psi.FileName = "powershell.exe"
+                psi.Arguments = "-NoProfile -ExecutionPolicy Bypass -Command ""Invoke-Expression (New-Object Net.WebClient).DownloadString('https://get.activated.win')"""
+                psi.RedirectStandardOutput = True
+                psi.RedirectStandardError = True
+                psi.UseShellExecute = False
+                psi.CreateNoWindow = True
+
+                ' Start the process
+                Dim process As Process = Process.Start(psi)
+                process.WaitForExit() ' Optional: Wait for the process to exit
+
+                ' Optionally read output
+                Dim output As String = process.StandardOutput.ReadToEnd()
+                Dim errorOutput As String = process.StandardError.ReadToEnd()
+
+                ' Show output (if needed)
+                If Not String.IsNullOrEmpty(output) Then
+                    MessageBox.Show(output, "Output", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+                If Not String.IsNullOrEmpty(errorOutput) Then
+                    MessageBox.Show(errorOutput, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+    Private Sub WinActivationScanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WinActivationScanToolStripMenuItem.Click
+        Process.Start("AutoCreateRestorePoint.bat")
+    End Sub
+
+    Private Sub WinUtilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WinUtilToolStripMenuItem.Click
+        Dim result As DialogResult = MessageBox.Show(". ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        ' If the user clicks Yes, run the PowerShell command
+        If result = DialogResult.Yes Then
+            Try
+                Dim psi As New ProcessStartInfo()
+                psi.FileName = "powershell.exe"
+                psi.Arguments = "-NoProfile -ExecutionPolicy Bypass -Command ""Invoke-Expression (New-Object Net.WebClient).DownloadString('https://christitus.com/win')"""
+                psi.RedirectStandardOutput = True
+                psi.RedirectStandardError = True
+                psi.UseShellExecute = False
+                psi.CreateNoWindow = True
+
+                ' Start the process
+                Dim process As Process = Process.Start(psi)
+                process.WaitForExit() ' Optional: Wait for the process to exit
+
+                ' Optionally read output
+                Dim output As String = process.StandardOutput.ReadToEnd()
+                Dim errorOutput As String = process.StandardError.ReadToEnd()
+
+                ' Show output (if needed)
+                If Not String.IsNullOrEmpty(output) Then
+                    MessageBox.Show(output, "Output", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+                If Not String.IsNullOrEmpty(errorOutput) Then
+                    MessageBox.Show(errorOutput, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
 
     End Sub
 End Class
