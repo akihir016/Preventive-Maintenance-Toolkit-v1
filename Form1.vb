@@ -18,7 +18,6 @@ Public Class Form1
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
-
     Private Function GenerateSystemInfoXml() As String
         Dim xmlDoc As New XmlDocument()
         Dim xmlDeclaration As XmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", Nothing)
@@ -38,7 +37,6 @@ Public Class Form1
 
         Return xmlDoc.OuterXml
     End Function
-
     Private Sub PopulateTreeViewWithXmlData(xmlData As String)
         treeViewXML.Nodes.Clear()
         If Not String.IsNullOrEmpty(xmlData) Then
@@ -51,7 +49,6 @@ Public Class Form1
             MessageBox.Show("XML data is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-
     Private Sub AddNode(xmlNode As XmlNode, treeNode As TreeNode)
         For Each childNode As XmlNode In xmlNode.ChildNodes
             Dim childTreeNode As TreeNode
@@ -117,7 +114,6 @@ Public Class Form1
             End Using
         End Using
     End Function
-
     Private Function GetXmlStringFromTreeView(treeView As TreeView) As String
         Dim xmlDoc As New XmlDocument()
         Dim xmlDeclaration As XmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", Nothing)
@@ -157,13 +153,11 @@ Public Class Form1
 
         Return sanitized
     End Function
-
     Private Sub AddXmlElement(xmlDoc As XmlDocument, parentNode As XmlNode, elementName As String, elementValue As String)
         Dim element As XmlElement = xmlDoc.CreateElement(elementName)
         element.InnerText = elementValue ' Ensure that this captures the RAM value as a string
         parentNode.AppendChild(element)
     End Sub
-
     Private Function GetOperatingSystemInfo() As String
         Dim osInfo As String = String.Empty
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem")
@@ -173,7 +167,6 @@ Public Class Form1
         End Using
         Return osInfo
     End Function
-
     Private Function GetOperatingSystemInstallDate() As String
         Dim installDate As String = String.Empty
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem")
@@ -184,7 +177,6 @@ Public Class Form1
         End Using
         Return installDate
     End Function
-
     Private Function GetCpuInfo() As String
         Dim cpuInfo As String = String.Empty
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_Processor")
@@ -194,7 +186,6 @@ Public Class Form1
         End Using
         Return cpuInfo
     End Function
-
     Private Function GetRamInfo() As String
         Dim totalRam As Long = 0
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMemory")
@@ -219,7 +210,6 @@ Public Class Form1
         Return storageInfo.Trim()
 
     End Function
-
     Private Function GetGpuInfo() As String
         Dim gpuInfo As String = String.Empty
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_VideoController")
@@ -246,28 +236,21 @@ Public Class Form1
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
-
-
     Private Sub btnWindowsSecurity_Click(sender As Object, e As EventArgs) Handles btnWindowsSecurity.Click
         Process.Start("cmd.exe", "/c start windowsdefender:")
     End Sub
-
     Private Sub btnWindowsUpdate_Click(sender As Object, e As EventArgs) Handles btnWindowsUpdate.Click
         Process.Start("cmd.exe", "/c start ms-settings:windowsupdate")
     End Sub
-
     Private Sub btnSystemRestore_Click(sender As Object, e As EventArgs) Handles btnSystemRestore.Click
         RunSystemPropertiesProtection()
     End Sub
-
     Private Sub btnTaskManager_Click(sender As Object, e As EventArgs) Handles btnTaskManager.Click
         Process.Start("cmd.exe", "/c start taskmgr")
     End Sub
-
     Private Sub btnDiskDefragmenter_Click(sender As Object, e As EventArgs) Handles btnDiskDefragmenter.Click
         Process.Start("cmd.exe", "/c start dfrgui")
     End Sub
-
     Private Sub btnOpenAddOrRemovePrograms_Click(sender As Object, e As EventArgs) Handles btnOpenAddOrRemovePrograms.Click
         RunAppwizCpl()
     End Sub
@@ -279,7 +262,6 @@ Public Class Form1
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
-
     Private Sub btnPing_Click(sender As Object, e As EventArgs) Handles BtnPing.Click
         Dim address As String = IpBox.Text.Trim()
 
@@ -412,7 +394,14 @@ Public Class Form1
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        ' Confirm before exiting
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
+        If result = DialogResult.Yes Then
+            ' Exit the application
+            Application.Exit()
+        End If
     End Sub
+
 End Class
 

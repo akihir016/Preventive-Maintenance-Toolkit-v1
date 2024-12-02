@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         GroupBox1 = New GroupBox()
+        PictureBox1 = New PictureBox()
         Label7 = New Label()
         Button1 = New Button()
         Label12 = New Label()
@@ -44,37 +45,45 @@ Partial Class Form1
         FileToolStripMenuItem = New ToolStripMenuItem()
         ExportScanToolStripMenuItem = New ToolStripMenuItem()
         ExitToolStripMenuItem = New ToolStripMenuItem()
+        HelpToolStripMenuItem = New ToolStripMenuItem()
+        DocumentationToolStripMenuItem = New ToolStripMenuItem()
+        HelpToolStripMenuItem2 = New ToolStripMenuItem()
         ToolsToolStripMenuItem = New ToolStripMenuItem()
         MASActivationToolStripMenuItem = New ToolStripMenuItem()
         WinUtilToolStripMenuItem = New ToolStripMenuItem()
+        RecoverWindowsLicToolStripMenuItem = New ToolStripMenuItem()
         WinActivationScanToolStripMenuItem = New ToolStripMenuItem()
-        HelpToolStripMenuItem = New ToolStripMenuItem()
-        DocumentationToolStripMenuItem = New ToolStripMenuItem()
-        ToolsToolStripMenuItem1 = New ToolStripMenuItem()
-        MASActivationToolStripMenuItem1 = New ToolStripMenuItem()
-        WinUtilityToolStripMenuItem = New ToolStripMenuItem()
+        HelpToolStripMenuItem1 = New ToolStripMenuItem()
+        MASActivationTutorialToolStripMenuItem = New ToolStripMenuItem()
+        WinUtilityTutorialsToolStripMenuItem = New ToolStripMenuItem()
+        OEMTypeToolStripMenuItem = New ToolStripMenuItem()
         LstPingResults = New ListBox()
         txtAddress = New TextBox()
         BtnPing = New Button()
         ToolBox = New TabControl()
         TabPage1 = New TabPage()
-        PictureBox1 = New PictureBox()
         IpBox = New TextBox()
         PictureBox2 = New PictureBox()
         Scan = New TabPage()
+        TabPage2 = New TabPage()
+        GroupBox2 = New GroupBox()
+        CheckBox2 = New CheckBox()
+        CheckBox1 = New CheckBox()
         Label8 = New Label()
-        TypeOfOEMLicenseToolStripMenuItem = New ToolStripMenuItem()
         GroupBox1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         ToolBox.SuspendLayout()
         TabPage1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Scan.SuspendLayout()
+        TabPage2.SuspendLayout()
+        GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(PictureBox1)
         GroupBox1.Controls.Add(Label7)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Controls.Add(Label12)
@@ -89,11 +98,21 @@ Partial Class Form1
         GroupBox1.Controls.Add(btnWindowsUpdate)
         GroupBox1.Controls.Add(btnSystemRestore)
         GroupBox1.Controls.Add(btnWindowsSecurity)
-        GroupBox1.Location = New Point(0, 6)
+        GroupBox1.Location = New Point(3, 0)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(365, 143)
+        GroupBox1.Size = New Size(486, 149)
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources._2020_nia_logo
+        PictureBox1.Location = New Point(384, 22)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(96, 99)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 30
+        PictureBox1.TabStop = False
         ' 
         ' Label7
         ' 
@@ -253,7 +272,7 @@ Partial Class Form1
         ' 
         ' MenuStrip1
         ' 
-        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, ToolsToolStripMenuItem, HelpToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, HelpToolStripMenuItem, ToolsToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(516, 24)
@@ -279,34 +298,9 @@ Partial Class Form1
         ExitToolStripMenuItem.Size = New Size(136, 22)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
-        ' ToolsToolStripMenuItem
-        ' 
-        ToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MASActivationToolStripMenuItem, WinUtilToolStripMenuItem, WinActivationScanToolStripMenuItem})
-        ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        ToolsToolStripMenuItem.Size = New Size(46, 20)
-        ToolsToolStripMenuItem.Text = "Tools"
-        ' 
-        ' MASActivationToolStripMenuItem
-        ' 
-        MASActivationToolStripMenuItem.Name = "MASActivationToolStripMenuItem"
-        MASActivationToolStripMenuItem.Size = New Size(180, 22)
-        MASActivationToolStripMenuItem.Text = "MAS Activation"
-        ' 
-        ' WinUtilToolStripMenuItem
-        ' 
-        WinUtilToolStripMenuItem.Name = "WinUtilToolStripMenuItem"
-        WinUtilToolStripMenuItem.Size = New Size(180, 22)
-        WinUtilToolStripMenuItem.Text = "WinUtililty"
-        ' 
-        ' WinActivationScanToolStripMenuItem
-        ' 
-        WinActivationScanToolStripMenuItem.Name = "WinActivationScanToolStripMenuItem"
-        WinActivationScanToolStripMenuItem.Size = New Size(180, 22)
-        WinActivationScanToolStripMenuItem.Text = "Win Activation Scan"
-        ' 
         ' HelpToolStripMenuItem
         ' 
-        HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DocumentationToolStripMenuItem, ToolsToolStripMenuItem1})
+        HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DocumentationToolStripMenuItem, HelpToolStripMenuItem2})
         HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         HelpToolStripMenuItem.Size = New Size(44, 20)
         HelpToolStripMenuItem.Text = "Help"
@@ -314,27 +308,71 @@ Partial Class Form1
         ' DocumentationToolStripMenuItem
         ' 
         DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        DocumentationToolStripMenuItem.Size = New Size(180, 22)
+        DocumentationToolStripMenuItem.Size = New Size(157, 22)
         DocumentationToolStripMenuItem.Text = "Documentation"
         ' 
-        ' ToolsToolStripMenuItem1
+        ' HelpToolStripMenuItem2
         ' 
-        ToolsToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {MASActivationToolStripMenuItem1, WinUtilityToolStripMenuItem, TypeOfOEMLicenseToolStripMenuItem})
-        ToolsToolStripMenuItem1.Name = "ToolsToolStripMenuItem1"
-        ToolsToolStripMenuItem1.Size = New Size(180, 22)
-        ToolsToolStripMenuItem1.Text = "Tools"
+        HelpToolStripMenuItem2.Name = "HelpToolStripMenuItem2"
+        HelpToolStripMenuItem2.Size = New Size(157, 22)
+        HelpToolStripMenuItem2.Text = "Help"
         ' 
-        ' MASActivationToolStripMenuItem1
+        ' ToolsToolStripMenuItem
         ' 
-        MASActivationToolStripMenuItem1.Name = "MASActivationToolStripMenuItem1"
-        MASActivationToolStripMenuItem1.Size = New Size(183, 22)
-        MASActivationToolStripMenuItem1.Text = "MAS Activation"
+        ToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MASActivationToolStripMenuItem, WinUtilToolStripMenuItem, RecoverWindowsLicToolStripMenuItem, WinActivationScanToolStripMenuItem, HelpToolStripMenuItem1})
+        ToolsToolStripMenuItem.Enabled = False
+        ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        ToolsToolStripMenuItem.Size = New Size(95, 20)
+        ToolsToolStripMenuItem.Text = "Advance Tools"
         ' 
-        ' WinUtilityToolStripMenuItem
+        ' MASActivationToolStripMenuItem
         ' 
-        WinUtilityToolStripMenuItem.Name = "WinUtilityToolStripMenuItem"
-        WinUtilityToolStripMenuItem.Size = New Size(183, 22)
-        WinUtilityToolStripMenuItem.Text = "WinUtility"
+        MASActivationToolStripMenuItem.Name = "MASActivationToolStripMenuItem"
+        MASActivationToolStripMenuItem.Size = New Size(189, 22)
+        MASActivationToolStripMenuItem.Text = "MAS Activation"
+        ' 
+        ' WinUtilToolStripMenuItem
+        ' 
+        WinUtilToolStripMenuItem.Name = "WinUtilToolStripMenuItem"
+        WinUtilToolStripMenuItem.Size = New Size(189, 22)
+        WinUtilToolStripMenuItem.Text = "WinUtililty"
+        ' 
+        ' RecoverWindowsLicToolStripMenuItem
+        ' 
+        RecoverWindowsLicToolStripMenuItem.Name = "RecoverWindowsLicToolStripMenuItem"
+        RecoverWindowsLicToolStripMenuItem.Size = New Size(189, 22)
+        RecoverWindowsLicToolStripMenuItem.Text = "Recover Windows Lic "
+        ' 
+        ' WinActivationScanToolStripMenuItem
+        ' 
+        WinActivationScanToolStripMenuItem.Name = "WinActivationScanToolStripMenuItem"
+        WinActivationScanToolStripMenuItem.Size = New Size(189, 22)
+        WinActivationScanToolStripMenuItem.Text = "Win Activation Scan"
+        ' 
+        ' HelpToolStripMenuItem1
+        ' 
+        HelpToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {MASActivationTutorialToolStripMenuItem, WinUtilityTutorialsToolStripMenuItem, OEMTypeToolStripMenuItem})
+        HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
+        HelpToolStripMenuItem1.Size = New Size(189, 22)
+        HelpToolStripMenuItem1.Text = "Help"
+        ' 
+        ' MASActivationTutorialToolStripMenuItem
+        ' 
+        MASActivationTutorialToolStripMenuItem.Name = "MASActivationTutorialToolStripMenuItem"
+        MASActivationTutorialToolStripMenuItem.Size = New Size(199, 22)
+        MASActivationTutorialToolStripMenuItem.Text = "MAS Activation Tutorial"
+        ' 
+        ' WinUtilityTutorialsToolStripMenuItem
+        ' 
+        WinUtilityTutorialsToolStripMenuItem.Name = "WinUtilityTutorialsToolStripMenuItem"
+        WinUtilityTutorialsToolStripMenuItem.Size = New Size(199, 22)
+        WinUtilityTutorialsToolStripMenuItem.Text = "WinUtility Tutorials"
+        ' 
+        ' OEMTypeToolStripMenuItem
+        ' 
+        OEMTypeToolStripMenuItem.Name = "OEMTypeToolStripMenuItem"
+        OEMTypeToolStripMenuItem.Size = New Size(199, 22)
+        OEMTypeToolStripMenuItem.Text = "OEM Type"
         ' 
         ' LstPingResults
         ' 
@@ -366,6 +404,7 @@ Partial Class Form1
         ' 
         ToolBox.Controls.Add(TabPage1)
         ToolBox.Controls.Add(Scan)
+        ToolBox.Controls.Add(TabPage2)
         ToolBox.Location = New Point(12, 27)
         ToolBox.Name = "ToolBox"
         ToolBox.SelectedIndex = 0
@@ -374,7 +413,6 @@ Partial Class Form1
         ' 
         ' TabPage1
         ' 
-        TabPage1.Controls.Add(PictureBox1)
         TabPage1.Controls.Add(IpBox)
         TabPage1.Controls.Add(GroupBox1)
         TabPage1.Controls.Add(LstPingResults)
@@ -388,16 +426,6 @@ Partial Class Form1
         TabPage1.TabIndex = 0
         TabPage1.Text = "ToolBox"
         TabPage1.UseVisualStyleBackColor = True
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = My.Resources.Resources._2020_nia_logo
-        PictureBox1.Location = New Point(371, 32)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(96, 99)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 30
-        PictureBox1.TabStop = False
         ' 
         ' IpBox
         ' 
@@ -425,8 +453,49 @@ Partial Class Form1
         Scan.Padding = New Padding(3)
         Scan.Size = New Size(489, 356)
         Scan.TabIndex = 1
-        Scan.Text = "Scan"
+        Scan.Text = "System Scan"
         Scan.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage2
+        ' 
+        TabPage2.Controls.Add(GroupBox2)
+        TabPage2.Location = New Point(4, 24)
+        TabPage2.Name = "TabPage2"
+        TabPage2.Padding = New Padding(3)
+        TabPage2.Size = New Size(489, 356)
+        TabPage2.TabIndex = 2
+        TabPage2.Text = "Troubleshooting"
+        TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(CheckBox2)
+        GroupBox2.Controls.Add(CheckBox1)
+        GroupBox2.Location = New Point(6, 6)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(477, 344)
+        GroupBox2.TabIndex = 0
+        GroupBox2.TabStop = False
+        ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoSize = True
+        CheckBox2.Location = New Point(19, 47)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(117, 19)
+        CheckBox2.TabIndex = 1
+        CheckBox2.Text = "Windows License"
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoSize = True
+        CheckBox1.Location = New Point(19, 22)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(81, 19)
+        CheckBox1.TabIndex = 0
+        CheckBox1.Text = "PowerCFG"
+        CheckBox1.UseVisualStyleBackColor = True
         ' 
         ' Label8
         ' 
@@ -436,12 +505,6 @@ Partial Class Form1
         Label8.Size = New Size(123, 15)
         Label8.TabIndex = 29
         Label8.Text = "NIA Region 3 - IT Staff"
-        ' 
-        ' TypeOfOEMLicenseToolStripMenuItem
-        ' 
-        TypeOfOEMLicenseToolStripMenuItem.Name = "TypeOfOEMLicenseToolStripMenuItem"
-        TypeOfOEMLicenseToolStripMenuItem.Size = New Size(183, 22)
-        TypeOfOEMLicenseToolStripMenuItem.Text = "Type of OEM License"
         ' 
         ' Form1
         ' 
@@ -458,14 +521,17 @@ Partial Class Form1
         Text = " Preventive Maintenance Toolkit"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         ToolBox.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Scan.ResumeLayout(False)
+        TabPage2.ResumeLayout(False)
+        GroupBox2.ResumeLayout(False)
+        GroupBox2.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
 
@@ -507,9 +573,15 @@ Partial Class Form1
     Friend WithEvents MASActivationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DocumentationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WinUtilToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolsToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents MASActivationToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents WinUtilityToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WinActivationScanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TypeOfOEMLicenseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents RecoverWindowsLicToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MASActivationTutorialToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WinUtilityTutorialsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OEMTypeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
