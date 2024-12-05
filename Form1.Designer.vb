@@ -67,6 +67,10 @@ Partial Class Form1
         Scan = New TabPage()
         TabPage2 = New TabPage()
         GroupBox2 = New GroupBox()
+        btnGenerateReport = New Button()
+        CheckBox5 = New CheckBox()
+        CheckBox4 = New CheckBox()
+        CheckBox3 = New CheckBox()
         CheckBox2 = New CheckBox()
         CheckBox1 = New CheckBox()
         Label8 = New Label()
@@ -320,10 +324,10 @@ Partial Class Form1
         ' ToolsToolStripMenuItem
         ' 
         ToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MASActivationToolStripMenuItem, WinUtilToolStripMenuItem, RecoverWindowsLicToolStripMenuItem, WinActivationScanToolStripMenuItem, HelpToolStripMenuItem1})
-        ToolsToolStripMenuItem.Enabled = False
         ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
         ToolsToolStripMenuItem.Size = New Size(95, 20)
         ToolsToolStripMenuItem.Text = "Advance Tools"
+        ToolsToolStripMenuItem.Visible = False
         ' 
         ' MASActivationToolStripMenuItem
         ' 
@@ -469,6 +473,10 @@ Partial Class Form1
         ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(btnGenerateReport)
+        GroupBox2.Controls.Add(CheckBox5)
+        GroupBox2.Controls.Add(CheckBox4)
+        GroupBox2.Controls.Add(CheckBox3)
         GroupBox2.Controls.Add(CheckBox2)
         GroupBox2.Controls.Add(CheckBox1)
         GroupBox2.Location = New Point(6, 6)
@@ -477,14 +485,53 @@ Partial Class Form1
         GroupBox2.TabIndex = 0
         GroupBox2.TabStop = False
         ' 
+        ' btnGenerateReport
+        ' 
+        btnGenerateReport.Location = New Point(19, 259)
+        btnGenerateReport.Name = "btnGenerateReport"
+        btnGenerateReport.Size = New Size(74, 30)
+        btnGenerateReport.TabIndex = 5
+        btnGenerateReport.Text = "Proceed"
+        btnGenerateReport.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox5
+        ' 
+        CheckBox5.AutoSize = True
+        CheckBox5.Location = New Point(19, 122)
+        CheckBox5.Name = "CheckBox5"
+        CheckBox5.Size = New Size(117, 19)
+        CheckBox5.TabIndex = 4
+        CheckBox5.Text = "Windows License"
+        CheckBox5.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox4
+        ' 
+        CheckBox4.AutoSize = True
+        CheckBox4.Location = New Point(19, 97)
+        CheckBox4.Name = "CheckBox4"
+        CheckBox4.Size = New Size(117, 19)
+        CheckBox4.TabIndex = 3
+        CheckBox4.Text = "Windows License"
+        CheckBox4.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox3
+        ' 
+        CheckBox3.AutoSize = True
+        CheckBox3.Location = New Point(19, 72)
+        CheckBox3.Name = "CheckBox3"
+        CheckBox3.Size = New Size(117, 19)
+        CheckBox3.TabIndex = 2
+        CheckBox3.Text = "Windows License"
+        CheckBox3.UseVisualStyleBackColor = True
+        ' 
         ' CheckBox2
         ' 
         CheckBox2.AutoSize = True
         CheckBox2.Location = New Point(19, 47)
         CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(117, 19)
+        CheckBox2.Size = New Size(153, 19)
         CheckBox2.TabIndex = 1
-        CheckBox2.Text = "Windows License"
+        CheckBox2.Text = "Windows License Check"
         CheckBox2.UseVisualStyleBackColor = True
         ' 
         ' CheckBox1
@@ -576,7 +623,6 @@ Partial Class Form1
     Friend WithEvents WinActivationScanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents RecoverWindowsLicToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MASActivationTutorialToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WinUtilityTutorialsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OEMTypeToolStripMenuItem As ToolStripMenuItem
@@ -584,4 +630,9 @@ Partial Class Form1
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents RecoverWindowsLicToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnGenerateReport As Button
 End Class

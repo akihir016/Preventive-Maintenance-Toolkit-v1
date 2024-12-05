@@ -3,6 +3,8 @@ Imports System.Management
 Imports System.Xml
 
 Public Class Form1
+
+
     Private Sub Form1_Load(ender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -357,7 +359,7 @@ Public Class Form1
     End Sub
 
     Private Sub WinUtilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WinUtilToolStripMenuItem.Click
-        Dim result As DialogResult = MessageBox.Show(". ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        Dim result As DialogResult = MessageBox.Show("By proceeding to use this tool, The Developer will held no liablities for the results. ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         ' If the user clicks Yes, run the PowerShell command
         If result = DialogResult.Yes Then
@@ -403,5 +405,92 @@ Public Class Form1
         End If
     End Sub
 
+    Private ReadOnly konamiCode As String = "UUDDLRLRBA"
+    Private inputSequence As String = ""
+
+    Public Sub New()
+        InitializeComponent()
+        Me.KeyPreview = True ' Ensure the form receives key events
+        AddHandler Me.KeyDown, AddressOf Form1_KeyDown ' Correct way to add the event handler
+    End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs)
+        ' Check which key was pressed and update the input sequence
+        Select Case e.KeyCode
+            Case Keys.Up
+                inputSequence += "U"
+            Case Keys.Down
+                inputSequence += "D"
+            Case Keys.Left
+                inputSequence += "L"
+            Case Keys.Right
+                inputSequence += "R"
+            Case Keys.A
+                inputSequence += "A"
+            Case Keys.B
+                inputSequence += "B"
+            Case Else
+                Return ' Ignore other keys
+        End Select
+
+        ' Debug: Log the current input sequence
+        Console.WriteLine("Current Input Sequence: " & inputSequence)
+
+        ' Check if the input sequence matches the Konami Code
+        If inputSequence.Length > konamiCode.Length Then
+            inputSequence = inputSequence.Substring(1) ' Keep the last N characters
+        End If
+
+        If inputSequence = konamiCode Then
+            EnableToolStripMenu()
+            inputSequence = "" ' Reset the input sequence
+        End If
+    End Sub
+
+    Private Sub EnableToolStripMenu()
+        ' Enable the ToolStrip button or menu item
+        ToolsToolStripMenuItem.Visible = True ' Ensure this is the correct reference
+        MessageBox.Show("Advance Tools enabled.")
+    End Sub
+
+    Private Sub btnGenerateReport_Click(sender As Object, e As EventArgs) Handles btnGenerateReport.Click
+        If CheckBox1.Checked Then
+            ' Define the folder path
+            Dim folderPath As String = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Battery-Report")
+
+            ' Check if the folder exists, if not, create it
+            If Not Directory.Exists(folderPath) Then
+                Directory.CreateDirectory(folderPath)
+            End If
+
+            ' Define the file path for the battery report
+            Dim reportFilePath As String = Path.Combine(folderPath, "battery_report.html")
+
+            ' Create the process to run the powercfg command
+            Dim process As New Process()
+            process.StartInfo.FileName = "cmd.exe"
+            process.StartInfo.Arguments = $"/c powercfg /batteryreport /output ""{reportFilePath}"""
+            process.StartInfo.UseShellExecute = False
+            process.StartInfo.RedirectStandardOutput = True
+            process.StartInfo.RedirectStandardError = True
+            process.StartInfo.CreateNoWindow = True
+
+            Try
+                ' Start the process
+                process.Start()
+                process.WaitForExit()
+
+                ' Optionally, you can read the output or error
+                Dim output As String = process.StandardOutput.ReadToEnd()
+                Dim errorOutput As String = process.StandardError.ReadToEnd()
+
+                ' Inform the user
+                MessageBox.Show("Battery report generated successfully at: " & reportFilePath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+        End If
+    End Sub
 End Class
 

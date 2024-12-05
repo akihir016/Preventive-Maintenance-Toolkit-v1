@@ -53,6 +53,9 @@
     <None Update="DISMCheckhealth.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="GetProductKey.vbs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
