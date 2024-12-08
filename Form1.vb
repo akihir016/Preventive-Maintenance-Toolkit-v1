@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Management
 Imports System.Xml
+Imports System.Diagnostics
 
 Public Class Form1
 
@@ -484,13 +485,44 @@ Public Class Form1
                 Dim output As String = process.StandardOutput.ReadToEnd()
                 Dim errorOutput As String = process.StandardError.ReadToEnd()
 
-                ' Inform the user
-                MessageBox.Show("Battery report generated successfully at: " & reportFilePath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Inform the user and provide an option to open the containing folder
+                Dim result As DialogResult = MessageBox.Show("Battery report generated successfully at: " & reportFilePath & vbCrLf & "Do you want to open the containing folder?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+                ' Open the containing folder if the user clicks Yes
+                If result = DialogResult.Yes Then
+                    Process.Start("explorer.exe", folderPath)
+                End If
+
             Catch ex As Exception
                 MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-        Else
         End If
-    End Sub
-End Class
 
+        If CheckBox3.Checked Then
+            Try
+
+                MessageBox.Show("CheckBox3 is checked. Attempting to open Regedit...", "CheckBox3 Status", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Path to the registry key you want to navigate to
+                Dim registryPath As String = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList"
+
+                ' Run regedit with the specified registry path
+                Dim regeditProcess As New Process()
+                regeditProcess.StartInfo.FileName = "regedit.exe"
+                regeditProcess.StartInfo.Arguments = "/m """ & registryPath & """"
+                regeditProcess.Start()
+            Catch ex As Exception
+                MessageBox.Show("An error occurred while trying to open Regedit: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+
+        If CheckBox5_CheckedThen Then
+            Try
+
+            Catch ex As Exception
+
+            End Try
+        End If
+        ' Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+    End Sub
+
+End Class
