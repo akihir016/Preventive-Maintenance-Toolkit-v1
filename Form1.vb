@@ -2,10 +2,9 @@
 Imports System.Management
 Imports System.Xml
 Imports System.Diagnostics
+Imports System.Text
 
 Public Class Form1
-
-
     Private Sub Form1_Load(ender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -162,13 +161,12 @@ Public Class Form1
         parentNode.AppendChild(element)
     End Sub
     Private Function GetOperatingSystemInfo() As String
-        Dim osInfo As String = String.Empty
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem")
             For Each obj As ManagementObject In searcher.Get()
-                osInfo = obj("Caption") & " " & obj("Version")
+                Return $"{obj("Caption")} {obj("Version")}"
             Next
         End Using
-        Return osInfo
+        Return String.Empty
     End Function
     Private Function GetOperatingSystemInstallDate() As String
         Dim installDate As String = String.Empty
@@ -201,17 +199,16 @@ Public Class Form1
         Return totalRamInGB.ToString() ' Return only the numeric value in GB
     End Function
     Private Function GetStorageInfo() As String
-        Dim storageInfo As String = String.Empty
+        Dim storageInfo As New StringBuilder()
         Using searcher As New ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive")
             For Each obj As ManagementObject In searcher.Get()
                 Dim model As String = obj("Model").ToString()
                 Dim size As Long = CLng(obj("Size"))
                 Dim sizeInGB As Double = Math.Round(size / 1024 / 1024 / 1024, 2)
-                storageInfo &= model & " (" & sizeInGB.ToString() & " GB)" & Environment.NewLine
+                storageInfo.AppendLine($"{model} ({sizeInGB} GB)")
             Next
         End Using
-        Return storageInfo.Trim()
-
+        Return storageInfo.ToString().Trim()
     End Function
     Private Function GetGpuInfo() As String
         Dim gpuInfo As String = String.Empty
@@ -239,21 +236,30 @@ Public Class Form1
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
+    Private Sub StartCommand(command As String)
+        Process.Start("cmd.exe", $"/c start {command}")
+    End Sub
+
     Private Sub btnWindowsSecurity_Click(sender As Object, e As EventArgs) Handles btnWindowsSecurity.Click
-        Process.Start("cmd.exe", "/c start windowsdefender:")
+        StartCommand("windowsdefender:")
     End Sub
+
     Private Sub btnWindowsUpdate_Click(sender As Object, e As EventArgs) Handles btnWindowsUpdate.Click
-        Process.Start("cmd.exe", "/c start ms-settings:windowsupdate")
+        StartCommand("ms-settings:windowsupdate")
     End Sub
+
     Private Sub btnSystemRestore_Click(sender As Object, e As EventArgs) Handles btnSystemRestore.Click
         RunSystemPropertiesProtection()
     End Sub
+
     Private Sub btnTaskManager_Click(sender As Object, e As EventArgs) Handles btnTaskManager.Click
-        Process.Start("cmd.exe", "/c start taskmgr")
+        StartCommand("taskmgr")
     End Sub
+
     Private Sub btnDiskDefragmenter_Click(sender As Object, e As EventArgs) Handles btnDiskDefragmenter.Click
-        Process.Start("cmd.exe", "/c start dfrgui")
+        StartCommand("dfrgui")
     End Sub
+
     Private Sub btnOpenAddOrRemovePrograms_Click(sender As Object, e As EventArgs) Handles btnOpenAddOrRemovePrograms.Click
         RunAppwizCpl()
     End Sub
@@ -319,29 +325,25 @@ Public Class Form1
     End Sub
 
     Private Sub MASActivationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MASActivationToolStripMenuItem.Click
-        ' Show confirmation dialog
         Dim result As DialogResult = MessageBox.Show("Do you want to run the activation script from the URL?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
-        ' If the user clicks Yes, run the PowerShell command
         If result = DialogResult.Yes Then
             Try
-                Dim psi As New ProcessStartInfo()
-                psi.FileName = "powershell.exe"
-                psi.Arguments = "-NoProfile -ExecutionPolicy Bypass -Command ""Invoke-Expression (New-Object Net.WebClient).DownloadString('https://get.activated.win')"""
-                psi.RedirectStandardOutput = True
-                psi.RedirectStandardError = True
-                psi.UseShellExecute = False
-                psi.CreateNoWindow = True
+                Dim psi As New ProcessStartInfo() With {
+                .FileName = "powershell.exe",
+                .Arguments = "-NoProfile -ExecutionPolicy Bypass -Command ""Invoke-Expression (New-Object Net.WebClient).DownloadString('https://get.activated.win')""",
+                .RedirectStandardOutput = True,
+                .RedirectStandardError = True,
+                .UseShellExecute = False,
+                .CreateNoWindow = True
+            }
 
-                ' Start the process
                 Dim process As Process = Process.Start(psi)
-                process.WaitForExit() ' Optional: Wait for the process to exit
+                process.WaitForExit()
 
-                ' Optionally read output
                 Dim output As String = process.StandardOutput.ReadToEnd()
                 Dim errorOutput As String = process.StandardError.ReadToEnd()
 
-                ' Show output (if needed)
                 If Not String.IsNullOrEmpty(output) Then
                     MessageBox.Show(output, "Output", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
@@ -464,8 +466,10 @@ Public Class Form1
                 Directory.CreateDirectory(folderPath)
             End If
 
-            ' Define the file path for the battery report
-            Dim reportFilePath As String = Path.Combine(folderPath, "battery_report.html")
+            ' Get the computer name and define the file path for the battery report
+            Dim computerName As String = Environment.MachineName
+            Dim reportFileName As String = $"{computerName}_battery_report.html"
+            Dim reportFilePath As String = Path.Combine(folderPath, reportFileName)
 
             ' Create the process to run the powercfg command
             Dim process As New Process()
@@ -514,15 +518,25 @@ Public Class Form1
                 MessageBox.Show("An error occurred while trying to open Regedit: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
-
-        If CheckBox5_CheckedThen Then
+        If CheckBox4.Checked Then
             Try
+
+                Dim eventsViewerProcess As New Process()
+                eventsViewerProcess.StartInfo.FileName = "eventvwr.msc"
+                eventsViewerProcess.Start()
+
+            Catch ex As Exception
+                MessageBox.Show("An error occured: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+        If CheckBox5.Checked Then
+            Try
+                ' Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 
             Catch ex As Exception
 
             End Try
         End If
-        ' Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
     End Sub
 
 End Class
