@@ -102,21 +102,21 @@ Partial Class Form1
         GroupBox1.Controls.Add(btnWindowsUpdate)
         GroupBox1.Controls.Add(btnSystemRestore)
         GroupBox1.Controls.Add(btnWindowsSecurity)
-        GroupBox1.Location = New Point(4, 0)
-        GroupBox1.Margin = New Padding(4, 5, 4, 5)
+        GroupBox1.Location = New Point(3, 0)
+        GroupBox1.Margin = New Padding(3, 4, 3, 4)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(4, 5, 4, 5)
-        GroupBox1.Size = New Size(694, 248)
+        GroupBox1.Padding = New Padding(3, 4, 3, 4)
+        GroupBox1.Size = New Size(555, 198)
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources._2020_nia_logo
-        PictureBox1.Location = New Point(549, 37)
-        PictureBox1.Margin = New Padding(4, 5, 4, 5)
+        PictureBox1.Location = New Point(439, 30)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(137, 165)
+        PictureBox1.Size = New Size(110, 132)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 30
         PictureBox1.TabStop = False
@@ -124,10 +124,9 @@ Partial Class Form1
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(110, 188)
-        Label7.Margin = New Padding(4, 0, 4, 0)
+        Label7.Location = New Point(88, 150)
         Label7.Name = "Label7"
-        Label7.Size = New Size(187, 25)
+        Label7.Size = New Size(154, 20)
         Label7.TabIndex = 26
         Label7.Text = "DISM and Other Tools"
         ' 
@@ -135,10 +134,10 @@ Partial Class Form1
         ' 
         Button1.BackColor = Color.WhiteSmoke
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Location = New Point(9, 182)
-        Button1.Margin = New Padding(4, 5, 4, 5)
+        Button1.Location = New Point(7, 146)
+        Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
-        Button1.Size = New Size(93, 38)
+        Button1.Size = New Size(74, 30)
         Button1.TabIndex = 25
         Button1.Text = "Tool 7"
         Button1.UseVisualStyleBackColor = False
@@ -146,10 +145,9 @@ Partial Class Form1
         ' Label12
         ' 
         Label12.AutoSize = True
-        Label12.Location = New Point(379, 140)
-        Label12.Margin = New Padding(4, 0, 4, 0)
+        Label12.Location = New Point(303, 112)
         Label12.Name = "Label12"
-        Label12.Size = New Size(118, 25)
+        Label12.Size = New Size(99, 20)
         Label12.TabIndex = 24
         Label12.Text = "Uninstall Files"
         ' 
@@ -157,10 +155,10 @@ Partial Class Form1
         ' 
         btnOpenAddOrRemovePrograms.BackColor = Color.WhiteSmoke
         btnOpenAddOrRemovePrograms.FlatStyle = FlatStyle.Flat
-        btnOpenAddOrRemovePrograms.Location = New Point(273, 133)
-        btnOpenAddOrRemovePrograms.Margin = New Padding(4, 5, 4, 5)
+        btnOpenAddOrRemovePrograms.Location = New Point(218, 106)
+        btnOpenAddOrRemovePrograms.Margin = New Padding(3, 4, 3, 4)
         btnOpenAddOrRemovePrograms.Name = "btnOpenAddOrRemovePrograms"
-        btnOpenAddOrRemovePrograms.Size = New Size(93, 38)
+        btnOpenAddOrRemovePrograms.Size = New Size(74, 30)
         btnOpenAddOrRemovePrograms.TabIndex = 22
         btnOpenAddOrRemovePrograms.Text = "Tool 6"
         btnOpenAddOrRemovePrograms.UseVisualStyleBackColor = False
@@ -168,50 +166,45 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(113, 140)
-        Label5.Margin = New Padding(4, 0, 4, 0)
+        Label5.Location = New Point(90, 112)
         Label5.Name = "Label5"
-        Label5.Size = New Size(161, 25)
+        Label5.Size = New Size(134, 20)
         Label5.TabIndex = 16
         Label5.Text = "Disk Defragmenter"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(377, 92)
-        Label4.Margin = New Padding(4, 0, 4, 0)
+        Label4.Location = New Point(302, 74)
         Label4.Name = "Label4"
-        Label4.Size = New Size(120, 25)
+        Label4.Size = New Size(99, 20)
         Label4.TabIndex = 15
         Label4.Text = "Task Manager"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(113, 92)
-        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Location = New Point(90, 74)
         Label3.Name = "Label3"
-        Label3.Size = New Size(149, 25)
+        Label3.Size = New Size(123, 20)
         Label3.TabIndex = 14
         Label3.Text = "Windows Update"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(377, 43)
-        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Location = New Point(302, 34)
         Label2.Name = "Label2"
-        Label2.Size = New Size(153, 25)
+        Label2.Size = New Size(126, 20)
         Label2.TabIndex = 13
         Label2.Text = "Windows Security"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(113, 43)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(90, 34)
         Label1.Name = "Label1"
-        Label1.Size = New Size(133, 25)
+        Label1.Size = New Size(110, 20)
         Label1.TabIndex = 12
         Label1.Text = "System Restore"
         ' 
@@ -219,10 +212,10 @@ Partial Class Form1
         ' 
         btnDiskDefragmenter.BackColor = Color.WhiteSmoke
         btnDiskDefragmenter.FlatStyle = FlatStyle.Flat
-        btnDiskDefragmenter.Location = New Point(9, 133)
-        btnDiskDefragmenter.Margin = New Padding(4, 5, 4, 5)
+        btnDiskDefragmenter.Location = New Point(7, 106)
+        btnDiskDefragmenter.Margin = New Padding(3, 4, 3, 4)
         btnDiskDefragmenter.Name = "btnDiskDefragmenter"
-        btnDiskDefragmenter.Size = New Size(93, 38)
+        btnDiskDefragmenter.Size = New Size(74, 30)
         btnDiskDefragmenter.TabIndex = 5
         btnDiskDefragmenter.Text = "Tool 5"
         btnDiskDefragmenter.UseVisualStyleBackColor = False
@@ -231,10 +224,10 @@ Partial Class Form1
         ' 
         btnTaskManager.BackColor = Color.WhiteSmoke
         btnTaskManager.FlatStyle = FlatStyle.Flat
-        btnTaskManager.Location = New Point(273, 85)
-        btnTaskManager.Margin = New Padding(4, 5, 4, 5)
+        btnTaskManager.Location = New Point(218, 68)
+        btnTaskManager.Margin = New Padding(3, 4, 3, 4)
         btnTaskManager.Name = "btnTaskManager"
-        btnTaskManager.Size = New Size(93, 38)
+        btnTaskManager.Size = New Size(74, 30)
         btnTaskManager.TabIndex = 4
         btnTaskManager.Text = "Tool 4"
         btnTaskManager.UseVisualStyleBackColor = False
@@ -243,10 +236,10 @@ Partial Class Form1
         ' 
         btnWindowsUpdate.BackColor = Color.WhiteSmoke
         btnWindowsUpdate.FlatStyle = FlatStyle.Flat
-        btnWindowsUpdate.Location = New Point(9, 85)
-        btnWindowsUpdate.Margin = New Padding(4, 5, 4, 5)
+        btnWindowsUpdate.Location = New Point(7, 68)
+        btnWindowsUpdate.Margin = New Padding(3, 4, 3, 4)
         btnWindowsUpdate.Name = "btnWindowsUpdate"
-        btnWindowsUpdate.Size = New Size(93, 38)
+        btnWindowsUpdate.Size = New Size(74, 30)
         btnWindowsUpdate.TabIndex = 3
         btnWindowsUpdate.Text = "Tool 3"
         btnWindowsUpdate.UseVisualStyleBackColor = False
@@ -255,10 +248,10 @@ Partial Class Form1
         ' 
         btnSystemRestore.BackColor = Color.WhiteSmoke
         btnSystemRestore.FlatStyle = FlatStyle.Flat
-        btnSystemRestore.Location = New Point(9, 37)
-        btnSystemRestore.Margin = New Padding(4, 5, 4, 5)
+        btnSystemRestore.Location = New Point(7, 30)
+        btnSystemRestore.Margin = New Padding(3, 4, 3, 4)
         btnSystemRestore.Name = "btnSystemRestore"
-        btnSystemRestore.Size = New Size(93, 38)
+        btnSystemRestore.Size = New Size(74, 30)
         btnSystemRestore.TabIndex = 2
         btnSystemRestore.Text = "Tool 1"
         btnSystemRestore.UseVisualStyleBackColor = False
@@ -267,30 +260,30 @@ Partial Class Form1
         ' 
         btnWindowsSecurity.BackColor = Color.WhiteSmoke
         btnWindowsSecurity.FlatStyle = FlatStyle.Flat
-        btnWindowsSecurity.Location = New Point(273, 37)
-        btnWindowsSecurity.Margin = New Padding(4, 5, 4, 5)
+        btnWindowsSecurity.Location = New Point(218, 30)
+        btnWindowsSecurity.Margin = New Padding(3, 4, 3, 4)
         btnWindowsSecurity.Name = "btnWindowsSecurity"
-        btnWindowsSecurity.Size = New Size(93, 38)
+        btnWindowsSecurity.Size = New Size(74, 30)
         btnWindowsSecurity.TabIndex = 1
         btnWindowsSecurity.Text = "Tool 2"
         btnWindowsSecurity.UseVisualStyleBackColor = False
         ' 
         ' nfoScan
         ' 
-        nfoScan.Location = New Point(29, 10)
-        nfoScan.Margin = New Padding(4, 5, 4, 5)
+        nfoScan.Location = New Point(23, 8)
+        nfoScan.Margin = New Padding(3, 4, 3, 4)
         nfoScan.Name = "nfoScan"
-        nfoScan.Size = New Size(164, 38)
+        nfoScan.Size = New Size(131, 30)
         nfoScan.TabIndex = 0
         nfoScan.Text = "System Info Scan"
         nfoScan.UseVisualStyleBackColor = True
         ' 
         ' treeViewXML
         ' 
-        treeViewXML.Location = New Point(9, 58)
-        treeViewXML.Margin = New Padding(4, 5, 4, 5)
+        treeViewXML.Location = New Point(7, 46)
+        treeViewXML.Margin = New Padding(3, 4, 3, 4)
         treeViewXML.Name = "treeViewXML"
-        treeViewXML.Size = New Size(680, 522)
+        treeViewXML.Size = New Size(545, 418)
         treeViewXML.TabIndex = 1
         ' 
         ' MenuStrip1
@@ -299,8 +292,8 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, HelpToolStripMenuItem, ToolsToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(9, 3, 0, 3)
-        MenuStrip1.Size = New Size(737, 35)
+        MenuStrip1.Padding = New Padding(7, 2, 0, 2)
+        MenuStrip1.Size = New Size(590, 28)
         MenuStrip1.TabIndex = 2
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -308,122 +301,122 @@ Partial Class Form1
         ' 
         FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ExportScanToolStripMenuItem, ExitToolStripMenuItem})
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        FileToolStripMenuItem.Size = New Size(54, 29)
+        FileToolStripMenuItem.Size = New Size(46, 24)
         FileToolStripMenuItem.Text = "File"
         ' 
         ' ExportScanToolStripMenuItem
         ' 
         ExportScanToolStripMenuItem.Name = "ExportScanToolStripMenuItem"
-        ExportScanToolStripMenuItem.Size = New Size(207, 34)
+        ExportScanToolStripMenuItem.Size = New Size(170, 26)
         ExportScanToolStripMenuItem.Text = "Export Scan"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(207, 34)
+        ExitToolStripMenuItem.Size = New Size(170, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' HelpToolStripMenuItem
         ' 
         HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DocumentationToolStripMenuItem, HelpToolStripMenuItem2})
         HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        HelpToolStripMenuItem.Size = New Size(65, 29)
+        HelpToolStripMenuItem.Size = New Size(55, 24)
         HelpToolStripMenuItem.Text = "Help"
         ' 
         ' DocumentationToolStripMenuItem
         ' 
         DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem"
-        DocumentationToolStripMenuItem.Size = New Size(237, 34)
+        DocumentationToolStripMenuItem.Size = New Size(195, 26)
         DocumentationToolStripMenuItem.Text = "Documentation"
         ' 
         ' HelpToolStripMenuItem2
         ' 
         HelpToolStripMenuItem2.Name = "HelpToolStripMenuItem2"
-        HelpToolStripMenuItem2.Size = New Size(237, 34)
+        HelpToolStripMenuItem2.Size = New Size(195, 26)
         HelpToolStripMenuItem2.Text = "Help"
         ' 
         ' ToolsToolStripMenuItem
         ' 
         ToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MASActivationToolStripMenuItem, WinUtilToolStripMenuItem, RecoverWindowsLicToolStripMenuItem, WinActivationScanToolStripMenuItem, HelpToolStripMenuItem1})
         ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        ToolsToolStripMenuItem.Size = New Size(142, 29)
+        ToolsToolStripMenuItem.Size = New Size(119, 24)
         ToolsToolStripMenuItem.Text = "Advance Tools"
         ToolsToolStripMenuItem.Visible = False
         ' 
         ' MASActivationToolStripMenuItem
         ' 
         MASActivationToolStripMenuItem.Name = "MASActivationToolStripMenuItem"
-        MASActivationToolStripMenuItem.Size = New Size(285, 34)
+        MASActivationToolStripMenuItem.Size = New Size(239, 26)
         MASActivationToolStripMenuItem.Text = "MAS Activation"
         ' 
         ' WinUtilToolStripMenuItem
         ' 
         WinUtilToolStripMenuItem.Name = "WinUtilToolStripMenuItem"
-        WinUtilToolStripMenuItem.Size = New Size(285, 34)
+        WinUtilToolStripMenuItem.Size = New Size(239, 26)
         WinUtilToolStripMenuItem.Text = "WinUtililty"
         ' 
         ' RecoverWindowsLicToolStripMenuItem
         ' 
         RecoverWindowsLicToolStripMenuItem.Name = "RecoverWindowsLicToolStripMenuItem"
-        RecoverWindowsLicToolStripMenuItem.Size = New Size(285, 34)
-        RecoverWindowsLicToolStripMenuItem.Text = "Recover Windows Lic "
+        RecoverWindowsLicToolStripMenuItem.Size = New Size(239, 26)
+        RecoverWindowsLicToolStripMenuItem.Text = "Legacy Apps Launcher"
         ' 
         ' WinActivationScanToolStripMenuItem
         ' 
         WinActivationScanToolStripMenuItem.Name = "WinActivationScanToolStripMenuItem"
-        WinActivationScanToolStripMenuItem.Size = New Size(285, 34)
+        WinActivationScanToolStripMenuItem.Size = New Size(239, 26)
         WinActivationScanToolStripMenuItem.Text = "Win Activation Scan"
         ' 
         ' HelpToolStripMenuItem1
         ' 
         HelpToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {MASActivationTutorialToolStripMenuItem, WinUtilityTutorialsToolStripMenuItem, OEMTypeToolStripMenuItem})
         HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        HelpToolStripMenuItem1.Size = New Size(285, 34)
+        HelpToolStripMenuItem1.Size = New Size(239, 26)
         HelpToolStripMenuItem1.Text = "Help"
         ' 
         ' MASActivationTutorialToolStripMenuItem
         ' 
         MASActivationTutorialToolStripMenuItem.Name = "MASActivationTutorialToolStripMenuItem"
-        MASActivationTutorialToolStripMenuItem.Size = New Size(300, 34)
+        MASActivationTutorialToolStripMenuItem.Size = New Size(249, 26)
         MASActivationTutorialToolStripMenuItem.Text = "MAS Activation Tutorial"
         ' 
         ' WinUtilityTutorialsToolStripMenuItem
         ' 
         WinUtilityTutorialsToolStripMenuItem.Name = "WinUtilityTutorialsToolStripMenuItem"
-        WinUtilityTutorialsToolStripMenuItem.Size = New Size(300, 34)
+        WinUtilityTutorialsToolStripMenuItem.Size = New Size(249, 26)
         WinUtilityTutorialsToolStripMenuItem.Text = "WinUtility Tutorials"
         ' 
         ' OEMTypeToolStripMenuItem
         ' 
         OEMTypeToolStripMenuItem.Name = "OEMTypeToolStripMenuItem"
-        OEMTypeToolStripMenuItem.Size = New Size(300, 34)
+        OEMTypeToolStripMenuItem.Size = New Size(249, 26)
         OEMTypeToolStripMenuItem.Text = "OEM Type"
         ' 
         ' LstPingResults
         ' 
         LstPingResults.FormattingEnabled = True
-        LstPingResults.ItemHeight = 25
-        LstPingResults.Location = New Point(9, 258)
-        LstPingResults.Margin = New Padding(4, 5, 4, 5)
+        LstPingResults.ItemHeight = 20
+        LstPingResults.Location = New Point(7, 206)
+        LstPingResults.Margin = New Padding(3, 4, 3, 4)
         LstPingResults.Name = "LstPingResults"
-        LstPingResults.Size = New Size(461, 304)
+        LstPingResults.Size = New Size(370, 244)
         LstPingResults.TabIndex = 3
         ' 
         ' txtAddress
         ' 
-        txtAddress.Location = New Point(724, 345)
-        txtAddress.Margin = New Padding(4, 5, 4, 5)
+        txtAddress.Location = New Point(579, 276)
+        txtAddress.Margin = New Padding(3, 4, 3, 4)
         txtAddress.Name = "txtAddress"
-        txtAddress.Size = New Size(227, 31)
+        txtAddress.Size = New Size(182, 27)
         txtAddress.TabIndex = 23
         ' 
         ' BtnPing
         ' 
         BtnPing.BackColor = Color.Transparent
-        BtnPing.Location = New Point(530, 307)
-        BtnPing.Margin = New Padding(4, 5, 4, 5)
+        BtnPing.Location = New Point(424, 246)
+        BtnPing.Margin = New Padding(3, 4, 3, 4)
         BtnPing.Name = "BtnPing"
-        BtnPing.Size = New Size(93, 38)
+        BtnPing.Size = New Size(74, 30)
         BtnPing.TabIndex = 23
         BtnPing.Text = "Ping"
         BtnPing.UseVisualStyleBackColor = False
@@ -433,11 +426,11 @@ Partial Class Form1
         ToolBox.Controls.Add(TabPage1)
         ToolBox.Controls.Add(Scan)
         ToolBox.Controls.Add(TabPage2)
-        ToolBox.Location = New Point(17, 45)
-        ToolBox.Margin = New Padding(4, 5, 4, 5)
+        ToolBox.Location = New Point(14, 36)
+        ToolBox.Margin = New Padding(3, 4, 3, 4)
         ToolBox.Name = "ToolBox"
         ToolBox.SelectedIndex = 0
-        ToolBox.Size = New Size(710, 640)
+        ToolBox.Size = New Size(568, 512)
         ToolBox.TabIndex = 28
         ' 
         ' TabPage1
@@ -448,30 +441,30 @@ Partial Class Form1
         TabPage1.Controls.Add(txtAddress)
         TabPage1.Controls.Add(BtnPing)
         TabPage1.Controls.Add(PictureBox2)
-        TabPage1.Location = New Point(4, 34)
-        TabPage1.Margin = New Padding(4, 5, 4, 5)
+        TabPage1.Location = New Point(4, 29)
+        TabPage1.Margin = New Padding(3, 4, 3, 4)
         TabPage1.Name = "TabPage1"
-        TabPage1.Padding = New Padding(4, 5, 4, 5)
-        TabPage1.Size = New Size(702, 602)
+        TabPage1.Padding = New Padding(3, 4, 3, 4)
+        TabPage1.Size = New Size(560, 479)
         TabPage1.TabIndex = 0
         TabPage1.Text = "ToolBox"
         TabPage1.UseVisualStyleBackColor = True
         ' 
         ' IpBox
         ' 
-        IpBox.Location = New Point(480, 258)
-        IpBox.Margin = New Padding(4, 5, 4, 5)
+        IpBox.Location = New Point(384, 206)
+        IpBox.Margin = New Padding(3, 4, 3, 4)
         IpBox.Name = "IpBox"
-        IpBox.Size = New Size(193, 31)
+        IpBox.Size = New Size(155, 27)
         IpBox.TabIndex = 24
         ' 
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(-189, -137)
-        PictureBox2.Margin = New Padding(4, 5, 4, 5)
+        PictureBox2.Location = New Point(-151, -110)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(1381, 813)
+        PictureBox2.Size = New Size(1105, 650)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 29
         PictureBox2.TabStop = False
@@ -480,11 +473,11 @@ Partial Class Form1
         ' 
         Scan.Controls.Add(nfoScan)
         Scan.Controls.Add(treeViewXML)
-        Scan.Location = New Point(4, 34)
-        Scan.Margin = New Padding(4, 5, 4, 5)
+        Scan.Location = New Point(4, 29)
+        Scan.Margin = New Padding(3, 4, 3, 4)
         Scan.Name = "Scan"
-        Scan.Padding = New Padding(4, 5, 4, 5)
-        Scan.Size = New Size(702, 602)
+        Scan.Padding = New Padding(3, 4, 3, 4)
+        Scan.Size = New Size(560, 479)
         Scan.TabIndex = 1
         Scan.Text = "System Scan"
         Scan.UseVisualStyleBackColor = True
@@ -492,11 +485,11 @@ Partial Class Form1
         ' TabPage2
         ' 
         TabPage2.Controls.Add(GroupBox2)
-        TabPage2.Location = New Point(4, 34)
-        TabPage2.Margin = New Padding(4, 5, 4, 5)
+        TabPage2.Location = New Point(4, 29)
+        TabPage2.Margin = New Padding(3, 4, 3, 4)
         TabPage2.Name = "TabPage2"
-        TabPage2.Padding = New Padding(4, 5, 4, 5)
-        TabPage2.Size = New Size(702, 602)
+        TabPage2.Padding = New Padding(3, 4, 3, 4)
+        TabPage2.Size = New Size(560, 479)
         TabPage2.TabIndex = 2
         TabPage2.Text = "Troubleshooting"
         TabPage2.UseVisualStyleBackColor = True
@@ -509,20 +502,20 @@ Partial Class Form1
         GroupBox2.Controls.Add(CheckBox3)
         GroupBox2.Controls.Add(CheckBox2)
         GroupBox2.Controls.Add(CheckBox1)
-        GroupBox2.Location = New Point(9, 10)
-        GroupBox2.Margin = New Padding(4, 5, 4, 5)
+        GroupBox2.Location = New Point(7, 8)
+        GroupBox2.Margin = New Padding(3, 4, 3, 4)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Padding = New Padding(4, 5, 4, 5)
-        GroupBox2.Size = New Size(681, 573)
+        GroupBox2.Padding = New Padding(3, 4, 3, 4)
+        GroupBox2.Size = New Size(545, 458)
         GroupBox2.TabIndex = 0
         GroupBox2.TabStop = False
         ' 
         ' btnGenerateReport
         ' 
-        btnGenerateReport.Location = New Point(27, 432)
-        btnGenerateReport.Margin = New Padding(4, 5, 4, 5)
+        btnGenerateReport.Location = New Point(22, 346)
+        btnGenerateReport.Margin = New Padding(3, 4, 3, 4)
         btnGenerateReport.Name = "btnGenerateReport"
-        btnGenerateReport.Size = New Size(106, 50)
+        btnGenerateReport.Size = New Size(85, 40)
         btnGenerateReport.TabIndex = 5
         btnGenerateReport.Text = "Proceed"
         btnGenerateReport.UseVisualStyleBackColor = True
@@ -530,10 +523,10 @@ Partial Class Form1
         ' CheckBox5
         ' 
         CheckBox5.AutoSize = True
-        CheckBox5.Location = New Point(388, 37)
-        CheckBox5.Margin = New Padding(4, 5, 4, 5)
+        CheckBox5.Location = New Point(310, 30)
+        CheckBox5.Margin = New Padding(3, 4, 3, 4)
         CheckBox5.Name = "CheckBox5"
-        CheckBox5.Size = New Size(152, 29)
+        CheckBox5.Size = New Size(128, 24)
         CheckBox5.TabIndex = 4
         CheckBox5.Text = "Reinstall AppX"
         CheckBox5.UseVisualStyleBackColor = True
@@ -541,10 +534,10 @@ Partial Class Form1
         ' CheckBox4
         ' 
         CheckBox4.AutoSize = True
-        CheckBox4.Location = New Point(27, 162)
-        CheckBox4.Margin = New Padding(4, 5, 4, 5)
+        CheckBox4.Location = New Point(22, 130)
+        CheckBox4.Margin = New Padding(3, 4, 3, 4)
         CheckBox4.Name = "CheckBox4"
-        CheckBox4.Size = New Size(121, 29)
+        CheckBox4.Size = New Size(100, 24)
         CheckBox4.TabIndex = 3
         CheckBox4.Text = "Power Log"
         CheckBox4.UseVisualStyleBackColor = True
@@ -552,10 +545,10 @@ Partial Class Form1
         ' CheckBox3
         ' 
         CheckBox3.AutoSize = True
-        CheckBox3.Location = New Point(27, 120)
-        CheckBox3.Margin = New Padding(4, 5, 4, 5)
+        CheckBox3.Location = New Point(22, 96)
+        CheckBox3.Margin = New Padding(3, 4, 3, 4)
         CheckBox3.Name = "CheckBox3"
-        CheckBox3.Size = New Size(245, 29)
+        CheckBox3.Size = New Size(204, 24)
         CheckBox3.TabIndex = 2
         CheckBox3.Text = "Corrupted  User Profile Fix"
         CheckBox3.UseVisualStyleBackColor = True
@@ -563,10 +556,10 @@ Partial Class Form1
         ' CheckBox2
         ' 
         CheckBox2.AutoSize = True
-        CheckBox2.Location = New Point(27, 78)
-        CheckBox2.Margin = New Padding(4, 5, 4, 5)
+        CheckBox2.Location = New Point(22, 62)
+        CheckBox2.Margin = New Padding(3, 4, 3, 4)
         CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(225, 29)
+        CheckBox2.Size = New Size(187, 24)
         CheckBox2.TabIndex = 1
         CheckBox2.Text = "Windows License Check"
         CheckBox2.UseVisualStyleBackColor = True
@@ -574,10 +567,10 @@ Partial Class Form1
         ' CheckBox1
         ' 
         CheckBox1.AutoSize = True
-        CheckBox1.Location = New Point(27, 37)
-        CheckBox1.Margin = New Padding(4, 5, 4, 5)
+        CheckBox1.Location = New Point(22, 30)
+        CheckBox1.Margin = New Padding(3, 4, 3, 4)
         CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(118, 29)
+        CheckBox1.Size = New Size(97, 24)
         CheckBox1.TabIndex = 0
         CheckBox1.Text = "PowerCFG"
         CheckBox1.UseVisualStyleBackColor = True
@@ -585,25 +578,24 @@ Partial Class Form1
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(17, 690)
-        Label8.Margin = New Padding(4, 0, 4, 0)
+        Label8.Location = New Point(14, 552)
         Label8.Name = "Label8"
-        Label8.Size = New Size(189, 25)
+        Label8.Size = New Size(158, 20)
         Label8.TabIndex = 29
         Label8.Text = "NIA Region 3 - IT Staff"
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(737, 728)
+        ClientSize = New Size(590, 582)
         Controls.Add(Label8)
         Controls.Add(ToolBox)
         Controls.Add(MenuStrip1)
         FormBorderStyle = FormBorderStyle.FixedSingle
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
-        Margin = New Padding(4, 5, 4, 5)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form1"
         Text = " Preventive Maintenance Toolkit"
         GroupBox1.ResumeLayout(False)

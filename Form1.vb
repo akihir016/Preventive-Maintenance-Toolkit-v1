@@ -3,10 +3,43 @@ Imports System.Management
 Imports System.Xml
 Imports System.Diagnostics
 Imports System.Text
+Imports System.Windows.Forms
 
 Public Class Form1
     Private Sub Form1_Load(ender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs)
+        ' Check which key was pressed and update the input sequence
+        Select Case e.KeyCode
+            Case Keys.Up
+                inputSequence += "U"
+            Case Keys.Down
+                inputSequence += "D"
+            Case Keys.Left
+                inputSequence += "L"
+            Case Keys.Right
+                inputSequence += "R"
+            Case Keys.A
+                inputSequence += "A"
+            Case Keys.B
+                inputSequence += "B"
+            Case Else
+                Return ' Ignore other keys
+        End Select
+
+        ' Debug: Log the current input sequence
+        Console.WriteLine("Current Input Sequence: " & inputSequence)
+
+        ' Check if the input sequence matches the Konami Code
+        If inputSequence.Length > konamiCode.Length Then
+            inputSequence = inputSequence.Substring(1) ' Keep the last N characters
+        End If
+
+        If inputSequence = konamiCode Then
+            EnableToolStripMenu()
+            inputSequence = "" ' Reset the input sequence
+        End If
     End Sub
     Private Sub nfoScan_Click(sender As Object, e As EventArgs) Handles nfoScan.Click
         Try
@@ -417,44 +450,12 @@ Public Class Form1
         AddHandler Me.KeyDown, AddressOf Form1_KeyDown ' Correct way to add the event handler
     End Sub
 
-    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs)
-        ' Check which key was pressed and update the input sequence
-        Select Case e.KeyCode
-            Case Keys.Up
-                inputSequence += "U"
-            Case Keys.Down
-                inputSequence += "D"
-            Case Keys.Left
-                inputSequence += "L"
-            Case Keys.Right
-                inputSequence += "R"
-            Case Keys.A
-                inputSequence += "A"
-            Case Keys.B
-                inputSequence += "B"
-            Case Else
-                Return ' Ignore other keys
-        End Select
-
-        ' Debug: Log the current input sequence
-        Console.WriteLine("Current Input Sequence: " & inputSequence)
-
-        ' Check if the input sequence matches the Konami Code
-        If inputSequence.Length > konamiCode.Length Then
-            inputSequence = inputSequence.Substring(1) ' Keep the last N characters
-        End If
-
-        If inputSequence = konamiCode Then
-            EnableToolStripMenu()
-            inputSequence = "" ' Reset the input sequence
-        End If
-    End Sub
-
     Private Sub EnableToolStripMenu()
         ' Enable the ToolStrip button or menu item
         ToolsToolStripMenuItem.Visible = True ' Ensure this is the correct reference
         MessageBox.Show("Advance Tools enabled.")
     End Sub
+
 
     Private Sub btnGenerateReport_Click(sender As Object, e As EventArgs) Handles btnGenerateReport.Click
         If CheckBox1.Checked Then
@@ -485,10 +486,6 @@ Public Class Form1
                 process.Start()
                 process.WaitForExit()
 
-                ' Optionally, you can read the output or error
-                Dim output As String = process.StandardOutput.ReadToEnd()
-                Dim errorOutput As String = process.StandardError.ReadToEnd()
-
                 ' Inform the user and provide an option to open the containing folder
                 Dim result As DialogResult = MessageBox.Show("Battery report generated successfully at: " & reportFilePath & vbCrLf & "Do you want to open the containing folder?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
 
@@ -502,41 +499,20 @@ Public Class Form1
             End Try
         End If
 
+        Try
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
         If CheckBox3.Checked Then
-            Try
-
-                MessageBox.Show("CheckBox3 is checked. Attempting to open Regedit...", "CheckBox3 Status", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ' Path to the registry key you want to navigate to
-                Dim registryPath As String = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList"
-
-                ' Run regedit with the specified registry path
-                Dim regeditProcess As New Process()
-                regeditProcess.StartInfo.FileName = "regedit.exe"
-                regeditProcess.StartInfo.Arguments = "/m """ & registryPath & """"
-                regeditProcess.Start()
-            Catch ex As Exception
-                MessageBox.Show("An error occurred while trying to open Regedit: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+            Process.Start("cmd.exe", "/c control userpasswords2") ''' this opens the legacy app for User Accounts.
         End If
-        If CheckBox4.Checked Then
-            Try
 
-                Dim eventsViewerProcess As New Process()
-                eventsViewerProcess.StartInfo.FileName = "eventvwr.msc"
-                eventsViewerProcess.Start()
-
-            Catch ex As Exception
-                MessageBox.Show("An error occured: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End If
-        If CheckBox5.Checked Then
-            Try
-                ' Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-
-            Catch ex As Exception
-
-            End Try
-        End If
     End Sub
 
+    Private Sub RecoverWindowsLicToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecoverWindowsLicToolStripMenuItem.Click
+        Form2.Show()
+    End Sub
 End Class
+
