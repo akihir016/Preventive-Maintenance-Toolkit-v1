@@ -4,6 +4,7 @@ Imports System.Xml
 Imports System.Diagnostics
 Imports System.Text
 Imports System.Windows.Forms
+Imports System.Threading
 
 Public Class Form1
     Private Sub Form1_Load(ender As Object, e As EventArgs) Handles MyBase.Load
@@ -505,9 +506,20 @@ Public Class Form1
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+        If CheckBox2.Checked Then
+            Dim licenseDescription As String = "OEM_DM" ' Replace with actual license description
+            Dim licenseType As New WindowsLicenseType(licenseDescription)
+        End If
+
         If CheckBox3.Checked Then
             Process.Start("cmd.exe", "/c control userpasswords2") ''' this opens the legacy app for User Accounts.
         End If
+
+        If CheckBox4.Checked Then
+            Dim dialog As New PUpPowerlog
+            dialog.ShowDialog(Me)
+        End If
+
 
     End Sub
 
