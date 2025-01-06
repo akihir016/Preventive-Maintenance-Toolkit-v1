@@ -66,8 +66,12 @@ Partial Class Form1
         Scan = New TabPage()
         TabPage2 = New TabPage()
         GroupBox2 = New GroupBox()
-        btnGenerateReport = New Button()
+        CheckBox9 = New CheckBox()
         CheckBox5 = New CheckBox()
+        CheckBox8 = New CheckBox()
+        CheckBox7 = New CheckBox()
+        CheckBox6 = New CheckBox()
+        btnGenerateReport = New Button()
         CheckBox4 = New CheckBox()
         CheckBox3 = New CheckBox()
         CheckBox2 = New CheckBox()
@@ -101,9 +105,9 @@ Partial Class Form1
         GroupBox1.Controls.Add(btnWindowsUpdate)
         GroupBox1.Controls.Add(btnSystemRestore)
         GroupBox1.Controls.Add(btnWindowsSecurity)
-        GroupBox1.Location = New Point(3, 0)
+        GroupBox1.Location = New Point(2, 3)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(486, 148)
+        GroupBox1.Size = New Size(484, 147)
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         ' 
@@ -122,7 +126,7 @@ Partial Class Form1
         Label7.AutoSize = True
         Label7.Location = New Point(77, 112)
         Label7.Name = "Label7"
-        Label7.Size = New Size(121, 15)
+        Label7.Size = New Size(122, 15)
         Label7.TabIndex = 26
         Label7.Text = "DISM and Other Tools"
         ' 
@@ -171,7 +175,7 @@ Partial Class Form1
         Label4.AutoSize = True
         Label4.Location = New Point(281, 56)
         Label4.Name = "Label4"
-        Label4.Size = New Size(79, 15)
+        Label4.Size = New Size(80, 15)
         Label4.TabIndex = 15
         Label4.Text = "Task Manager"
         ' 
@@ -293,13 +297,13 @@ Partial Class Form1
         ' ExportScanToolStripMenuItem
         ' 
         ExportScanToolStripMenuItem.Name = "ExportScanToolStripMenuItem"
-        ExportScanToolStripMenuItem.Size = New Size(136, 22)
+        ExportScanToolStripMenuItem.Size = New Size(135, 22)
         ExportScanToolStripMenuItem.Text = "Export Scan"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(136, 22)
+        ExitToolStripMenuItem.Size = New Size(135, 22)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' HelpToolStripMenuItem
@@ -325,7 +329,7 @@ Partial Class Form1
         ' 
         ToolsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MASActivationToolStripMenuItem, WinUtilToolStripMenuItem, RecoverWindowsLicToolStripMenuItem, WinActivationScanToolStripMenuItem, HelpToolStripMenuItem1})
         ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        ToolsToolStripMenuItem.Size = New Size(95, 20)
+        ToolsToolStripMenuItem.Size = New Size(96, 20)
         ToolsToolStripMenuItem.Text = "Advance Tools"
         ToolsToolStripMenuItem.Visible = False
         ' 
@@ -363,19 +367,19 @@ Partial Class Form1
         ' MASActivationTutorialToolStripMenuItem
         ' 
         MASActivationTutorialToolStripMenuItem.Name = "MASActivationTutorialToolStripMenuItem"
-        MASActivationTutorialToolStripMenuItem.Size = New Size(199, 22)
+        MASActivationTutorialToolStripMenuItem.Size = New Size(200, 22)
         MASActivationTutorialToolStripMenuItem.Text = "MAS Activation Tutorial"
         ' 
         ' WinUtilityTutorialsToolStripMenuItem
         ' 
         WinUtilityTutorialsToolStripMenuItem.Name = "WinUtilityTutorialsToolStripMenuItem"
-        WinUtilityTutorialsToolStripMenuItem.Size = New Size(199, 22)
+        WinUtilityTutorialsToolStripMenuItem.Size = New Size(200, 22)
         WinUtilityTutorialsToolStripMenuItem.Text = "WinUtility Tutorials"
         ' 
         ' OEMTypeToolStripMenuItem
         ' 
         OEMTypeToolStripMenuItem.Name = "OEMTypeToolStripMenuItem"
-        OEMTypeToolStripMenuItem.Size = New Size(199, 22)
+        OEMTypeToolStripMenuItem.Size = New Size(200, 22)
         OEMTypeToolStripMenuItem.Text = "OEM Type"
         ' 
         ' LstPingResults
@@ -392,7 +396,7 @@ Partial Class Form1
         BtnPing.BackColor = Color.Transparent
         BtnPing.Location = New Point(371, 184)
         BtnPing.Name = "BtnPing"
-        BtnPing.Size = New Size(65, 22)
+        BtnPing.Size = New Size(65, 26)
         BtnPing.TabIndex = 23
         BtnPing.Text = "Ping"
         BtnPing.UseVisualStyleBackColor = False
@@ -465,8 +469,12 @@ Partial Class Form1
         ' 
         ' GroupBox2
         ' 
-        GroupBox2.Controls.Add(btnGenerateReport)
+        GroupBox2.Controls.Add(CheckBox9)
         GroupBox2.Controls.Add(CheckBox5)
+        GroupBox2.Controls.Add(CheckBox8)
+        GroupBox2.Controls.Add(CheckBox7)
+        GroupBox2.Controls.Add(CheckBox6)
+        GroupBox2.Controls.Add(btnGenerateReport)
         GroupBox2.Controls.Add(CheckBox4)
         GroupBox2.Controls.Add(CheckBox3)
         GroupBox2.Controls.Add(CheckBox2)
@@ -477,6 +485,56 @@ Partial Class Form1
         GroupBox2.TabIndex = 0
         GroupBox2.TabStop = False
         ' 
+        ' CheckBox9
+        ' 
+        CheckBox9.AutoSize = True
+        CheckBox9.Location = New Point(263, 46)
+        CheckBox9.Name = "CheckBox9"
+        CheckBox9.Size = New Size(98, 19)
+        CheckBox9.TabIndex = 10
+        CheckBox9.Text = "Restore Hosts"
+        CheckBox9.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox5
+        ' 
+        CheckBox5.AutoSize = True
+        CheckBox5.Location = New Point(263, 22)
+        CheckBox5.Name = "CheckBox5"
+        CheckBox5.Size = New Size(98, 19)
+        CheckBox5.TabIndex = 9
+        CheckBox5.Text = "Backup Hosts"
+        CheckBox5.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox8
+        ' 
+        CheckBox8.AutoSize = True
+        CheckBox8.Location = New Point(19, 121)
+        CheckBox8.Name = "CheckBox8"
+        CheckBox8.Size = New Size(133, 19)
+        CheckBox8.TabIndex = 8
+        CheckBox8.Text = "Restart Print Spooler"
+        CheckBox8.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox7
+        ' 
+        CheckBox7.AutoSize = True
+        CheckBox7.Location = New Point(263, 96)
+        CheckBox7.Name = "CheckBox7"
+        CheckBox7.Size = New Size(164, 19)
+        CheckBox7.TabIndex = 7
+        CheckBox7.Text = "Facebook unBlock (Hosts)"
+        CheckBox7.UseVisualStyleBackColor = True
+        ' 
+        ' CheckBox6
+        ' 
+        CheckBox6.AutoSize = True
+        CheckBox6.Location = New Point(263, 71)
+        CheckBox6.Name = "CheckBox6"
+        CheckBox6.Size = New Size(150, 19)
+        CheckBox6.TabIndex = 6
+        CheckBox6.Text = "Facebook Block (Hosts)"
+        CheckBox6.UseVisualStyleBackColor = True
+        ' 
         ' btnGenerateReport
         ' 
         btnGenerateReport.Location = New Point(19, 260)
@@ -486,20 +544,10 @@ Partial Class Form1
         btnGenerateReport.Text = "Proceed"
         btnGenerateReport.UseVisualStyleBackColor = True
         ' 
-        ' CheckBox5
-        ' 
-        CheckBox5.AutoSize = True
-        CheckBox5.Location = New Point(271, 22)
-        CheckBox5.Name = "CheckBox5"
-        CheckBox5.Size = New Size(102, 19)
-        CheckBox5.TabIndex = 4
-        CheckBox5.Text = "Reinstall AppX"
-        CheckBox5.UseVisualStyleBackColor = True
-        ' 
         ' CheckBox4
         ' 
         CheckBox4.AutoSize = True
-        CheckBox4.Location = New Point(19, 98)
+        CheckBox4.Location = New Point(19, 96)
         CheckBox4.Name = "CheckBox4"
         CheckBox4.Size = New Size(87, 19)
         CheckBox4.TabIndex = 3
@@ -509,9 +557,9 @@ Partial Class Form1
         ' CheckBox3
         ' 
         CheckBox3.AutoSize = True
-        CheckBox3.Location = New Point(19, 72)
+        CheckBox3.Location = New Point(19, 71)
         CheckBox3.Name = "CheckBox3"
-        CheckBox3.Size = New Size(164, 19)
+        CheckBox3.Size = New Size(163, 19)
         CheckBox3.TabIndex = 2
         CheckBox3.Text = "Corrupted  User Profile Fix"
         CheckBox3.UseVisualStyleBackColor = True
@@ -541,7 +589,7 @@ Partial Class Form1
         Label8.AutoSize = True
         Label8.Location = New Point(12, 414)
         Label8.Name = "Label8"
-        Label8.Size = New Size(123, 15)
+        Label8.Size = New Size(124, 15)
         Label8.TabIndex = 29
         Label8.Text = "NIA Region 3 - IT Staff"
         ' 
@@ -549,7 +597,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(516, 436)
+        ClientSize = New Size(516, 434)
         Controls.Add(Label8)
         Controls.Add(ToolBox)
         Controls.Add(MenuStrip1)
@@ -621,9 +669,13 @@ Partial Class Form1
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
     Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents RecoverWindowsLicToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnGenerateReport As Button
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
 End Class

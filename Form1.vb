@@ -520,11 +520,36 @@ Public Class Form1
             dialog.ShowDialog(Me)
         End If
 
+        If CheckBox6.Checked Then
+            Dim modifier As New FbBlocker()
+            modifier.AddEntriesToHostsFile()
+        End If
+
+        If CheckBox7.Checked Then
+            Dim cleaner As New fbUnblocker()
+            cleaner.RemoveEntriesFromHostsFile()
+        End If
+
+        If CheckBox8.Checked Then
+            Dim spooler As New PrintSpoolerManager()
+            spooler.RestartPrintSpooler()
+        End If
+
+        If CheckBox9.Checked Then
+            Dim restorer As New HostsFileRestorer()
+            restorer.RestoreHostsFile()
+        End If
+
+        If CheckBox5.Checked Then
+            Dim backup As New HostsFileBackup()
+            backup.CreateBackup(overwrite:=False)
+        End If
 
     End Sub
 
     Private Sub RecoverWindowsLicToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecoverWindowsLicToolStripMenuItem.Click
         Form2.Show()
     End Sub
+
 End Class
 
